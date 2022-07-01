@@ -11,20 +11,28 @@ pipeline {
 
         }
     stages {
-        stage('Build Front') {
-            steps {
-                dir("./client") {
-                    sh 'npm install'
+            stages {
+                stage('Build') {
+                    steps {
+                        dir("./server") {
+                            sh 'sudo make up'
+                        }
+                    }   
                 }
-            }
-        }
-        stage('Build Back') {
-            steps {
-                dir("./server") {
-                    sh 'npm install'
-                }
-            }
-        }
+        // stage('Build Front') {
+        //     steps {
+        //         dir("./client") {
+        //             sh 'npm install'
+        //         }
+        //     }
+        // }
+        // stage('Build Back') {
+        //     steps {
+        //         dir("./server") {
+        //             sh 'npm install'
+        //         }
+        //     }
+        // }
         // stage('Test') {
         //             steps {
         //                 sh './jenkins/scripts/test.sh'
