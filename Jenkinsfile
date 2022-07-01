@@ -13,7 +13,7 @@ pipeline {
         stage('Build') {
             steps {
                 dir("./server") {
-                    sh 'sudo make up'
+                    sh 'make up'
                 }
             }   
         }
