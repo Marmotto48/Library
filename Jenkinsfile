@@ -10,9 +10,16 @@ pipeline {
             PATH = "$PATH:/usr/local/bin/docker-compose"
         }
     stages {
-        stage('Build') {
+        stage('Build front') {
             steps {
-                sh '/usr/bin/docker-compose up --build -d'
+                dir("./client")
+                sh 'npm install'
+            }
+        }
+        stage('Build back') {
+            steps {
+                dir("./server")
+                sh 'npm install'
             }
         }
         // stage('Test') {
