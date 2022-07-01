@@ -10,18 +10,13 @@ pipeline {
             // PATH = "$PATH:/usr/local/bin/docker-compose"
         }
     stages {
-        stage('Build front') {
+        stage('Build') {
             steps {
                 dir("./client")
                 sh 'npm install'
             }
         }
-        stage('Build back') {
-            steps {
-                dir("./server")
-                sh 'npm install'
-            }
-        }
+        
         // stage('Test') {
         //             steps {
         //                 sh './jenkins/scripts/test.sh'
