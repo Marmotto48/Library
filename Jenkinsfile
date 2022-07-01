@@ -6,6 +6,7 @@ pipeline {
         }
     }
      environment {
+            CI = 'true'
             PATH = "$PATH:/usr/local/bin/docker-compose"
         }
     stages {
