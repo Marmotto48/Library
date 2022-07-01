@@ -9,14 +9,20 @@ pipeline {
             CI = 'true'
         }
     stages {
-        stage('Build') {
+        stage('Build Front') {
             steps {
                 dir("./client") {
                     sh 'npm install'
                 }
             }
         }
-        
+        stage('Build Back') {
+            steps {
+                dir("./server") {
+                    sh 'npm install'
+                }
+            }
+        }
         // stage('Test') {
         //             steps {
         //                 sh './jenkins/scripts/test.sh'
