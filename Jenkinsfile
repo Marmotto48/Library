@@ -13,7 +13,7 @@ pipeline {
         stage('Build') {
             steps {
                 dir("./server") {
-                    sh 'make up'
+                    sh 'docker-compose up --build --remove-orphans'
                 }
             }   
         }
