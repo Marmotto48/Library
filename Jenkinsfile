@@ -5,21 +5,18 @@ pipeline {
             args '-p 3000:3000'
         }
     }
-     environment {
+    environment {
             CI = 'true'
             HOME = '.'
-
         }
     stages {
-            stages {
-                stage('Build') {
-                    steps {
-                        dir("./server") {
-                            sh 'sudo make up'
-                        }
-                    }   
+        stage('Build') {
+            steps {
+                dir("./server") {
+                    sh 'sudo make up'
                 }
-            }
+            }   
+        }
         // stage('Build Front') {
         //     steps {
         //         dir("./client") {
