@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'docker-compose up --build --remove-orphans'
+                sh 'docker compose up --build --remove-orphans'
             }   
         }
         // stage('Build Front') {
